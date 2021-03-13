@@ -1,0 +1,6 @@
+node_modules
+dep.js
+mail.js
+my.js
+tests/
+config/
