@@ -14,8 +14,7 @@ module.exports = function(app) {
         app.use(morgan('tiny'));
         appStart('debugging started.....')
     }
-    app.set('view engine', 'pug')
-    app.set('views', './views');  
+ 
     app.use('/user/apps', List);
     app.use('/user/application', Details);
     app.use('/user', User);
