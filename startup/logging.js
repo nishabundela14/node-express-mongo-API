@@ -1,5 +1,5 @@
 const winston = require('winston');
-require('winston-mongodb');
+// require('winston-mongodb');
 //transport - http, console, file
 //plugin for - mongo, couch, loogly, redis
 //and this add default transpot for console
@@ -34,8 +34,8 @@ module.exports = function() {
      
     winston.add(new winston.transports.Console({colorize: true, prettyPrint: true}))
      winston.add(new winston.transports.File({filename: 'logfile.log'}))
-     winston.add(new winston.transports.MongoDB({
-         db: 'mongodb://localhost/Portal'
-     }))
+    //  winston.add(new winston.transports.MongoDB({
+    //      db: 'mongodb://localhost/Portal'
+    //  }))
     
 }
