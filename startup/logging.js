@@ -20,10 +20,10 @@ module.exports = function() {
 
     //second way
 
-    // winston.handleExceptions(
-    //     new (winston.transports.Console({colorize: true, prettyPrint: true})),
-    //     new (winston.transports.File({filename: 'unhandled.log'}))
-    // );
+    winston.exceptions.handle(
+        new winston.transports.Console({colorize: true, prettyPrint: true}),
+        new winston.transports.File({filename: 'unhandled.log'})
+    );
 
     process.on('unhandledRejection', (ex) => {
         throw ex;
@@ -31,7 +31,8 @@ module.exports = function() {
     
     //instead of process we can use windston.handleexception
     //its not available rejection so use process and throw exception whichused by winston handleexception
-    
+     
+    winston.add(new winston.transports.Console({colorize: true, prettyPrint: true}))
      winston.add(new winston.transports.File({filename: 'logfile.log'}))
      winston.add(new winston.transports.MongoDB({
          db: 'mongodb://localhost/Portal'
